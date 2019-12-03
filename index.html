@@ -5,17 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Handwriting Recognition CNNs</title>
-    <!-- Import TensorFlow.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
-    <!-- Import tfjs-vis -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.0.2/dist/tfjs-vis.umd.min.js"></script>
-  
-    <!-- Import the data file -->
-    <script src="js/data.js" type="module"></script>
-    <!-- Import the main script file -->
-    <script src="js/script.js" type="module"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
-
-  <body>
+  <body class="text-center">
+    <div class="container d-flex vh-100 flex-column">
+      <div class="flex-grow-1"></div>
+        <div class="row justify-content-center">
+          <div class="card-deck text-center">
+            <div class="card mb-4 box-shadow md-auto">
+              <div class="card-header">
+                <h4 class="font-weight-normal">Download your Model</h4>
+              </div>
+              <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Don't close this tab while the model is being trained</li>
+                  <li>in case of problem make sure to use the latest version of Firefox to minimize the risk of problem</li>
+                </ul>
+                <button type="button"
+                        disabled
+                        id="downloadButton"
+                        onclick="downloadModel"
+                        class="btn btn-lg btn-block btn-primary">
+                    Download
+                </button>
+                <button type="button"
+                        disabled
+                        id="trainingButton"
+                        onclick="run"
+                        class="btn btn-lg btn-block btn-primary">
+                    Start training
+                </button>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="flex-grow-1"></div>
+    </div>
+    <footer>
+      <!-- Import TensorFlow.js -->
+      <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+      <!-- Import tfjs-vis -->
+      <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.0.2/dist/tfjs-vis.umd.min.js"></script>
+      <!-- Import the data file -->
+      <script src="js/data.js" type="module"></script>
+      <!-- Import the main script file -->
+      <script src="js/script.js" type="module"></script>
+      <!--import of functionnal function-->
+      <script src="js/common.js" type="module"></script>
+    </footer>
   </body>
 </html>

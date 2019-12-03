@@ -63,7 +63,9 @@ async function showExamples(data) {
 }
 
 async function run() {
-  const data = new MnistData();
+  console.log("tot");
+  //Main script called to train the model
+  /*const data = new MnistData();
   await data.load();
   await showExamples(data);
   const model = getModel();
@@ -71,10 +73,8 @@ async function run() {
 
   await train(model, data);
   await showAccuracy(model, data);
-  await showConfusion(model, data);
+  await showConfusion(model, data);*/
 }
-
-document.addEventListener('DOMContentLoaded', run);
 
 function getModel() {
   const model = tf.sequential();
