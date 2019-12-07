@@ -11,8 +11,4 @@ function enableTrainingButton() {
   document.getElementById("trainingButton").disabled = false;
 }
 
-function startTraining(){
-  console.log("tot");
-}
-
 document.addEventListener('DOMContentLoaded', enableTrainingButton);

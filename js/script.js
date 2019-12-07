@@ -63,12 +63,11 @@ async function showExamples(data) {
 }
 
 async function run() {
-  console.log("tot");
   //Main script called to train the model
-  /*const data = new MnistData();
+  const data = new MnistData();
   await data.load();
   await showExamples(data);
-  const model = getModel();
+  /*const model = getModel();
   tfvis.show.modelSummary({name: 'Model Architecture'}, model);
 
   await train(model, data);
@@ -173,3 +172,6 @@ async function train(model, data) {
     callbacks: fitCallbacks
   });
 }
+
+//we bind the main function to the click event
+document.getElementById("trainingButton").addEventListener("click", run);
