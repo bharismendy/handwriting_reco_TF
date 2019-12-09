@@ -1,5 +1,7 @@
 import {MnistData} from './data.js';
+
 const classNames = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
+export let model;
 
 function doPrediction(model, data, testDataSize = 500) {
   const IMAGE_WIDTH = 28;
@@ -62,17 +64,17 @@ async function showExamples(data) {
   }
 }
 
-async function run() {
+export async function run() {
   //Main script called to train the model
   const data = new MnistData();
   await data.load();
   await showExamples(data);
-  /*const model = getModel();
+  model = getModel();
   tfvis.show.modelSummary({name: 'Model Architecture'}, model);
 
   await train(model, data);
   await showAccuracy(model, data);
-  await showConfusion(model, data);*/
+  await showConfusion(model, data);
 }
 
 function getModel() {
@@ -172,6 +174,3 @@ async function train(model, data) {
     callbacks: fitCallbacks
   });
 }
-
-//we bind the main function to the click event
-document.getElementById("trainingButton").addEventListener("click", run);
