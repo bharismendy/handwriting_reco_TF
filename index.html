@@ -14,9 +14,11 @@
     <script src="js/train/script.js" type="module"></script>
     <!--import of functionnal function-->
     <script src="js/train/common.js" type="module"></script>
+    <!--import the canvas manager-->
+    <script src="js/load/canvas_drawing.js" type="text/javascript"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="css/main.css"/>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -69,21 +71,11 @@
               <!-- tab to use a model-->
               <div class="tab-pane fade" id="use">
                 <ul class="list-unstyled mt-3 mb-4">
-                  <li>the second tab Don't close this tab while the model is being trained</li>
-                  <li>in case of problem make sure to use the latest version of Firefox to minimize the risk of problem</li>
+                  <li><canvas id="sheet" width="280" height="280"></canvas></li>
+                  <li>image send : <img src="" id="imageResult"/></li>
+                  <li>Résultat :</li>
+                  <li> <button type="button" class="btn btn-block btn-danger" onclick="javascript:clearArea();return false;">Clear drawing area</button></li>
                 </ul>
-                <button type="button"
-                        disabled
-                        id="downloadButton"
-                        class="btn btn-lg btn-block btn-primary">
-                    Download
-                </button>
-                <button type="button"
-                        disabled
-                        id="trainingButton"
-                        class="btn btn-lg btn-block btn-primary">
-                    Start training
-                </button>
               </div>
             </div>
             </div>
