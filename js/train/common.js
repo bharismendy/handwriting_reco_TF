@@ -3,7 +3,8 @@ import { run, model } from "./script.js";
 // file for common function
 async function downloadModel(){
   if (model !== undefined){
-    await model.save('downloads://my-model');
+    //await model.save('downloads://my-model');
+    await model.save('localstorage://my-model');
   }
 }
 

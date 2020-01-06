@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Import TensorFlow.js -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+
     <!-- Import tfjs-vis -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.0.2/dist/tfjs-vis.umd.min.js"></script>
     <!-- Import the data file -->
@@ -16,6 +17,8 @@
     <script src="js/train/common.js" type="module"></script>
     <!--import the canvas manager-->
     <script src="js/load/canvas_drawing.js" type="text/javascript"></script>
+    <!--use the pre-trained model-->
+    <script src="js/load/model_using.js" type="text/javascript"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css"/>
@@ -72,7 +75,7 @@
               <div class="tab-pane fade" id="use">
                 <ul class="list-unstyled mt-3 mb-4">
                   <li><canvas id="sheet" width="280" height="280"></canvas></li>
-                  <li>image send : <img src="" id="imageResult"/></li>
+                  <li>image send : <img src="" id="imageResult" width="28" height="28"/></li>
                   <li>Résultat :</li>
                   <li> <button type="button" class="btn btn-block btn-danger" onclick="javascript:clearArea();return false;">Clear drawing area</button></li>
                 </ul>
