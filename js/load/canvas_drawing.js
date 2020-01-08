@@ -9,9 +9,15 @@ function imageToDataUri(img, width, height) {
     var canvas = document.createElement('canvas'),
         ctx = canvas.getContext('2d');
 
+
     // set its dimension to target size
     canvas.width = width;
     canvas.height = height;
+
+    // canvas with white background
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
 
     // draw source image into the off-screen canvas:
     ctx.drawImage(img, 0, 0, width, height);

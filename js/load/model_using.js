@@ -5,13 +5,16 @@ async function loadModel(){
     modelJson = await tf.loadLayersModel( url + 'data/my-model.json' );
 }
 function guessIt(imageToGuess){
-  let inputTensor = tf.browser.fromPixels(document.getElementById('imageResult'), 1)
+  const img = document.getElementById('imageResult')
+ img.onload = function(){
+ let inputTensor = tf.browser.fromPixels(document.getElementById('imageResult'), 1)// imageResult is an <img/> tag
     .reshape([1, 28, 28, 1])
-    .cast('float32');
+    .cast('float32').sub(127).div(127);
   let predictionResult =  modelJson.predict(inputTensor).dataSync();
   let recognizedDigit = predictionResult.indexOf(Math.max(...predictionResult));
   console.log(recognizedDigit);
   console.log(predictionResult);
+}
 }
 
 document.addEventListener('DOMContentLoaded', loadModel);
