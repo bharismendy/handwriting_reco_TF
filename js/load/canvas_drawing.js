@@ -15,8 +15,8 @@ function imageToDataUri(img, width, height) {
     canvas.height = height;
 
     // canvas with white background
-    ctx.fillStyle = 'white';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  /*  ctx.fillStyle = 'black';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);*/
 
 
     // draw source image into the off-screen canvas:
@@ -28,7 +28,8 @@ function imageToDataUri(img, width, height) {
 
 function InitThis() {
     ctx = document.getElementById('sheet').getContext("2d");
-
+    ctx.fillStyle = "#000000";
+    ctx.fillRect(0, 0, document.getElementById('sheet').width, document.getElementById('sheet').height);
     $('#sheet').mousedown(function (e) {
         mousePressed = true;
         Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false);
@@ -54,8 +55,8 @@ function InitThis() {
 function Draw(x, y, isDown) {
     if (isDown) {
         ctx.beginPath();
-        ctx.strokeStyle = "000000";
-        ctx.lineWidth = 9;
+        ctx.strokeStyle = "#FFFFFF";
+        ctx.lineWidth = 12;
         ctx.lineJoin = "round";
         ctx.moveTo(lastX, lastY);
         ctx.lineTo(x, y);
@@ -69,6 +70,8 @@ function clearArea() {
     // Use the identity matrix while clearing the canvas
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    ctx.fillStyle = "#000000";
+    ctx.fillRect(0, 0, document.getElementById('sheet').width, document.getElementById('sheet').height);
     document.getElementById("imageResult").setAttribute("src","");
 }
 
