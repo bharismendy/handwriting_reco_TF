@@ -45,7 +45,7 @@ function InitThis() {
         mousePressed = false;
         let img = imageToDataUri(document.getElementById("sheet"),28,28)//resize it
         let imgElement = document.getElementById("imageResult").setAttribute("src",img);// display it
-        guessIt(img);
+        guessIt();
     });
 	    $('#sheet').mouseleave(function (e) {
         mousePressed = false;
