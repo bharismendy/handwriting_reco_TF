@@ -73,6 +73,7 @@ function clearArea() {
     ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, document.getElementById('sheet').width, document.getElementById('sheet').height);
     document.getElementById("imageResult").setAttribute("src","");
+    document.getElementById("result").textContent = "";
 }
 
 // init the cancas
