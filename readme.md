@@ -1,7 +1,5 @@
--------
-<center>Handwriting Recognition with TensorFlow</center>
----
----------
+
+Handwriting Recognition with TensorFlow
 
 # About
 
